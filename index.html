@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minesweeper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script type="module" src="main.js"></script>
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(0, 0)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(0, 1)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(0, 2)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(0, 3)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(0, 4)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(0, 5)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(0, 6)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(0, 7)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(0, 8)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(0, 9)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(0, 10)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(0, 11)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(0, 12)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(0, 13)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(0, 14)">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(1, 0)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(1, 1)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(1, 2)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(1, 3)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(1, 4)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(1, 5)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(1, 6)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(1, 7)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(1, 8)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(1, 9)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(1, 10)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(1, 11)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(1, 12)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(1, 13)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(1, 14)">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(2, 0)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(2, 1)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(2, 2)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(2, 3)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(2, 4)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(2, 5)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(2, 6)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(2, 7)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(2, 8)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(2, 9)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(2, 10)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(2, 11)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(2, 12)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(2, 13)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(2, 14)">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(3, 0)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(3, 1)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(3, 2)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(3, 3)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(3, 4)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(3, 5)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(3, 6)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(3, 7)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(3, 8)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(3, 9)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(3, 10)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(3, 11)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(3, 12)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(3, 13)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(3, 14)">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(4, 0)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(4, 1)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(4, 2)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(4, 3)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(4, 4)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(4, 5)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(4, 6)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(4, 7)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(4, 8)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(4, 9)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(4, 10)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(4, 11)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(4, 12)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(4, 13)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(4, 14)">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(5, 0)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(5, 1)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(5, 2)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(5, 3)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(5, 4)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(5, 5)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(5, 6)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(5, 7)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(5, 8)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(5, 9)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(5, 10)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(5, 11)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(5, 12)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(5, 13)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(5, 14)">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(6, 0)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(6, 1)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(6, 2)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(6, 3)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(6, 4)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(6, 5)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(6, 6)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(6, 7)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(6, 8)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(6, 9)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(6, 10)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(6, 11)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(6, 12)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(6, 13)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(6, 14)">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(7, 0)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(7, 1)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(7, 2)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(7, 3)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(7, 4)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(7, 5)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(7, 6)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(7, 7)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(7, 8)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(7, 9)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(7, 10)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(7, 11)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(7, 12)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(7, 13)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(7, 14)">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(8, 0)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(8, 1)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(8, 2)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(8, 3)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(8, 4)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(8, 5)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(8, 6)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(8, 7)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(8, 8)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(8, 9)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(8, 10)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(8, 11)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(8, 12)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(8, 13)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(8, 14)">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(9, 0)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(9, 1)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(9, 2)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(9, 3)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(9, 4)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(9, 5)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(9, 6)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(9, 7)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(9, 8)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(9, 9)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(9, 10)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(9, 11)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(9, 12)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(9, 13)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(9, 14)">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(10, 0)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(10, 1)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(10, 2)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(10, 3)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(10, 4)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(10, 5)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(10, 6)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(10, 7)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(10, 8)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(10, 9)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(10, 10)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(10, 11)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(10, 12)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(10, 13)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(10, 14)">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(11, 0)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(11, 1)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(11, 2)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(11, 3)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(11, 4)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(11, 5)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(11, 6)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(11, 7)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(11, 8)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(11, 9)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(11, 10)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(11, 11)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(11, 12)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(11, 13)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(11, 14)">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(12, 0)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(12, 1)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(12, 2)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(12, 3)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(12, 4)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(12, 5)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(12, 6)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(12, 7)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(12, 8)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(12, 9)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(12, 10)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(12, 11)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(12, 12)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(12, 13)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(12, 14)">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(13, 0)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(13, 1)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(13, 2)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(13, 3)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(13, 4)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(13, 5)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(13, 6)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(13, 7)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(13, 8)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(13, 9)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(13, 10)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(13, 11)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(13, 12)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(13, 13)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(13, 14)">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(14, 0)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(14, 1)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(14, 2)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(14, 3)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(14, 4)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(14, 5)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(14, 6)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(14, 7)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(14, 8)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(14, 9)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(14, 10)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(14, 11)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(14, 12)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(14, 13)">
+                </td>
+                <td>
+                    <input type="button" value="" class="field" onclick="checkField(14, 14)">
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
