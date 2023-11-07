@@ -57,9 +57,19 @@ function markMines() {
     for (let indexRow = 0; indexRow < fieldSize; indexRow++) {
         for (let indexField = 0; indexField < fieldSize; indexField++) {
             if (minefield[indexRow][indexField] === true) {
-                rows[indexRow].childNodes[indexField].classList.add('mark');
+                rows[indexRow].childNodes[indexField].classList.add('show-mine');
             }
         }
     }
 }
 export { markMines };
+
+function checkForMines(id) {
+    let postition = id.split('-');
+    if (minefield[postition[1]][postition[2]] === true) {
+        return true;
+    } else {
+        return false;
+    }
+}
+export { checkForMines };

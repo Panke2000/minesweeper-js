@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: sans-serif;
     font-weight: bold;
+    user-select: none;
 }
 
 game {
@@ -35,21 +36,31 @@ minefield {
 }
 
 .mine-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 10%;
     height: 100%;
-    background-color: lightgray;
-    border: 1px solid gray;
-    box-shadow: inset 0px 0px 3px 1px gray;
+    background-color: rgb(215, 215, 215);
+    background-image: linear-gradient(
+    180deg,
+    hsl(0deg 0% 74%) 0%,
+    hsl(344deg 0% 79%) 50%,
+    hsl(0deg 0% 84%) 100%
+    );
+    border: 1px solid rgb(150, 150, 150);
 }
 
 .mine-field:hover {
     background-color: rgb(190, 190, 190);
-    box-shadow: inset 0px 0px 3px 2px rgb(69, 69, 69);
+    box-shadow: inset 0px 0px 3px 2px rgb(100, 100, 100);
 }
 
-.mine-field-opened {
-    background-color: aliceblue;
-    border: 1px solid lightgray;
+.opened {
+    background-image: none;
+    background-color: rgb(240, 240, 240);
+    border: 1px solid rgb(190, 190, 190);
+    box-shadow: none;
 }
 
 .number-1 {
@@ -84,14 +95,23 @@ minefield {
     color: darkgray;
 }
 
-.explode {
-    background-color: red;
-}
-
-.showMine {
+.show-mine {
+    background-image: none;
     background-color: pink;
 }
 
-.mark {
-    background-color: yellow;
+.flag {
+    background-image: url('./Vectors/flag.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.explode {
+    background-image: none;
+    background-color: red;
+    background-image: url('./Vectors/explosion.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: inset 0px 0px 3px 5px orange;
 }
