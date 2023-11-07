@@ -3,204 +3,240 @@ import { fieldSize } from "./gameStart.js";
 import { rows } from "./main.js";
 import { minefield } from "./mines.js";
 
+function checkMiddle(position) {
+    if (minefield[position[0]][position[1]] === true) {
+        return -1;
+    }
+    if (minefield[position[0] - 1][position[1]] === true) {
+        counter++;
+    }
+    if (minefield[position[0] - 1][position[1] + 1] === true) {
+        counter++;
+    }
+    if (minefield[position[0]][position[1] + 1] === true) {
+        counter++;
+    }
+    if (minefield[position[0] + 1][position[1] + 1] === true) {
+        counter++;
+    }
+    if (minefield[position[0] + 1][position[1]] === true) {
+        counter++;
+    }
+    if (minefield[position[0] + 1][position[1] - 1] === true) {
+        counter++;
+    }
+    if (minefield[position[0]][position[1] - 1] === true) {
+        counter++;
+    }
+    if (minefield[position[0] - 1][position[1] - 1] === true) {
+        counter++;
+    }
+    return counter;
+}
+
+function checkTopLeft(position) {
+    if (minefield[position[0]][position[1]] === true) {
+        return -1;
+    }
+    if (minefield[position[0]][position[1] + 1] === true) {
+        counter++;
+    }
+    if (minefield[position[0] + 1][position[1] + 1] === true) {
+        counter++;
+    }
+    if (minefield[position[0] + 1][position[1]] === true) {
+        counter++;
+    }
+    return counter;
+}
+
+function checkTopRight(position) {
+    if (minefield[position[0]][position[1]] === true) {
+        return -1;
+    }
+    if (minefield[position[0]][position[1] + 1] === true) {
+        counter++;
+    }
+    if (minefield[position[0] + 1][position[1] - 1] === true) {
+        counter++;
+    }
+    if (minefield[position[0] + 1][position[1]] === true) {
+        counter++;
+    }
+    return counter;
+}
+
+function checkBottomLeft(position) {
+    if (minefield[position[0]][position[1]] === true) {
+        return -1;
+    }
+    if (minefield[position[0] - 1][position[1]] === true) {
+        counter++;
+    }
+    if (minefield[position[0] - 1][position[1] + 1] === true) {
+        counter++;
+    }
+    if (minefield[position[0]][position[1] + 1] === true) {
+        counter++;
+    }
+    return counter;
+}
+
+function checkBottomRight(position) {
+    if (minefield[position[0]][position[1]] === true) {
+        return -1;
+    }
+    if (minefield[position[0]][position[1] - 1] === true) {
+        counter++;
+    }
+    if (minefield[position[0] - 1][position[1] - 1] === true) {
+        counter++;
+    }
+    if (minefield[position[0]][position[1] + 1] === true) {
+        counter++;
+    }
+    return counter;
+}
+
+function checkTopCorner(position) {
+    if (minefield[position[0]][position[1]] === true) {
+        return -1;
+    }
+    if (minefield[position[0]][position[1] + 1] === true) {
+        counter++;
+    }
+    if (minefield[position[0] + 1][position[1] + 1] === true) {
+        counter++;
+    }
+    if (minefield[position[0] + 1][position[1]] === true) {
+        counter++;
+    }
+    if (minefield[position[0] + 1][position[1] - 1] === true) {
+        counter++;
+    }
+    if (minefield[position[0]][position[1] - 1] === true) {
+        counter++;
+    }
+    return counter;
+}
+
+function checkBottomCorner(position) {
+    if (minefield[position[0]][position[1]] === true) {
+        return -1;
+    }
+    if (minefield[position[0]][position[1] - 1] === true) {
+        counter++;
+    }
+    if (minefield[position[0] - 1][position[1] - 1] === true) {
+        counter++;
+    }
+    if (minefield[position[0] - 1][position[1]] === true) {
+        counter++;
+    }
+    if (minefield[position[0] - 1][position[1] + 1] === true) {
+        counter++;
+    }
+    if (minefield[position[0]][position[1] + 1] === true) {
+        counter++;
+    }
+    return counter;
+}
+
+function checkLeftCorner(position) {
+    if (minefield[position[0]][position[1]] === true) {
+        return -1;
+    }
+    if (minefield[position[0] - 1][position[1]] === true) {
+        counter++;
+    }
+    if (minefield[position[0] - 1][position[1] + 1] === true) {
+        counter++;
+    }
+    if (minefield[position[0]][position[1] + 1] === true) {
+        counter++;
+    }
+    if (minefield[position[0] + 1][position[1] + 1] === true) {
+        counter++;
+    }
+    if (minefield[position[0] + 1][position[1]] === true) {
+        counter++;
+    }
+    return counter;
+}
+
+function checkRightCorner(position) {
+    if (minefield[position[0]][position[1]] === true) {
+        return -1;
+    }
+    if (minefield[position[0] + 1][position[1]] === true) {
+        counter++;
+    }
+    if (minefield[position[0] + 1][position[1] - 1] === true) {
+        counter++;
+    }
+    if (minefield[position[0]][position[1] - 1] === true) {
+        counter++;
+    }
+    if (minefield[position[0] - 1][position[1] - 1] === true) {
+        counter++;
+    }
+    if (minefield[position[0] - 1][position[1]] === true) {
+        counter++;
+    }
+    return counter;
+}
+
 function checkMinesAround(position) {
     let counter = 0;
 
     //middle
     if (position[0] !== 0 && position[0] !== (fieldSize - 1) && 
         position[1] !== 0 && position[1] !== (fieldSize - 1)) {
-        if (minefield[position[0]][position[1]] === true) {
-            return -1;
-        }
-        if (minefield[position[0] - 1][position[1]] === true) {
-            counter++;
-        }
-        if (minefield[position[0] - 1][position[1] + 1] === true) {
-            counter++;
-        }
-        if (minefield[position[0]][position[1] + 1] === true) {
-            counter++;
-        }
-        if (minefield[position[0] + 1][position[1] + 1] === true) {
-            counter++;
-        }
-        if (minefield[position[0] + 1][position[1]] === true) {
-            counter++;
-        }
-        if (minefield[position[0] + 1][position[1] - 1] === true) {
-            counter++;
-        }
-        if (minefield[position[0]][position[1] - 1] === true) {
-            counter++;
-        }
-        if (minefield[position[0] - 1][position[1] - 1] === true) {
-            counter++;
-        }
-        return counter;
+        return checkMiddle(position);
     }
 
     //top-left
     if (position[0] === 0 && position[1] === 0) {
-        if (minefield[position[0]][position[1]] === true) {
-            return -1;
-        }
-        if (minefield[position[0]][position[1] + 1] === true) {
-            counter++;
-        }
-        if (minefield[position[0] + 1][position[1] + 1] === true) {
-            counter++;
-        }
-        if (minefield[position[0] + 1][position[1]] === true) {
-            counter++;
-        }
-        return counter;
+        return checkTopLeft(position);
     }
 
     //top-right
     if (position[0] === 0 && position[1] === (fieldSize - 1)) {
-        if (minefield[position[0]][position[1]] === true) {
-            return -1;
-        }
-        if (minefield[position[0]][position[1] + 1] === true) {
-            counter++;
-        }
-        if (minefield[position[0] + 1][position[1] - 1] === true) {
-            counter++;
-        }
-        if (minefield[position[0] + 1][position[1]] === true) {
-            counter++;
-        }
-        return counter;
+        return checkTopRight(position);
     }
     
     //bottom-left
     if (position[0] === (fieldSize - 1) && position[1] === 0) {
-        if (minefield[position[0]][position[1]] === true) {
-            return -1;
-        }
-        if (minefield[position[0] - 1][position[1]] === true) {
-            counter++;
-        }
-        if (minefield[position[0] - 1][position[1] + 1] === true) {
-            counter++;
-        }
-        if (minefield[position[0]][position[1] + 1] === true) {
-            counter++;
-        }
-        return counter;
+        return checkBottomLeft(position);
     }
 
     //bottom-right
     if (position[0] === (fieldSize - 1) && position[1] === (fieldSize - 1)) {
-        if (minefield[position[0]][position[1]] === true) {
-            return -1;
-        }
-        if (minefield[position[0]][position[1] - 1] === true) {
-            counter++;
-        }
-        if (minefield[position[0] - 1][position[1] - 1] === true) {
-            counter++;
-        }
-        if (minefield[position[0]][position[1] + 1] === true) {
-            counter++;
-        }
-        return counter;
+        return checkBottomRight(position);
     }
 
     //top-corner
     if (position[0] === 0 && 
         position[1] !== 0 && position[1] !== (fieldSize - 1)) {
-        if (minefield[position[0]][position[1]] === true) {
-            return -1;
-        }
-        if (minefield[position[0]][position[1] + 1] === true) {
-            counter++;
-        }
-        if (minefield[position[0] + 1][position[1] + 1] === true) {
-            counter++;
-        }
-        if (minefield[position[0] + 1][position[1]] === true) {
-            counter++;
-        }
-        if (minefield[position[0] + 1][position[1] - 1] === true) {
-            counter++;
-        }
-        if (minefield[position[0]][position[1] - 1] === true) {
-            counter++;
-        }
-        return counter;
+        return checkTopCorner(position);
     }
 
     //bottom-corner
     if (position[0] === (fieldSize - 1) && 
         position[1] !== 0 && position[1] !== (fieldSize - 1)) {
-        if (minefield[position[0]][position[1]] === true) {
-            return -1;
-        }
-        if (minefield[position[0]][position[1] - 1] === true) {
-            counter++;
-        }
-        if (minefield[position[0] - 1][position[1] - 1] === true) {
-            counter++;
-        }
-        if (minefield[position[0] - 1][position[1]] === true) {
-            counter++;
-        }
-        if (minefield[position[0] - 1][position[1] + 1] === true) {
-            counter++;
-        }
-        if (minefield[position[0]][position[1] + 1] === true) {
-            counter++;
-        }
-        return counter;
+        return checkBottomCorner(position);
     }
 
     //left-corner
     if (position[1] === 0 && 
         position[0] !== 0 && position[0] !== (fieldSize - 1)) {
-        if (minefield[position[0]][position[1]] === true) {
-            return -1;
-        }
-        if (minefield[position[0] - 1][position[1]] === true) {
-            counter++;
-        }
-        if (minefield[position[0] - 1][position[1] + 1] === true) {
-            counter++;
-        }
-        if (minefield[position[0]][position[1] + 1] === true) {
-            counter++;
-        }
-        if (minefield[position[0] + 1][position[1] + 1] === true) {
-            counter++;
-        }
-        if (minefield[position[0] + 1][position[1]] === true) {
-            counter++;
-        }
-        return counter;
+        return checkLeftCorner(position);
     }
 
     //right-corner
     if (position[1] === (fieldSize - 1) && 
         position[0] !== 0 && position[0] !== (fieldSize - 1)) {
-        if (minefield[position[0]][position[1]] === true) {
-            return -1;
-        }
-        if (minefield[position[0] + 1][position[1]] === true) {
-            counter++;
-        }
-        if (minefield[position[0] + 1][position[1] - 1] === true) {
-            counter++;
-        }
-        if (minefield[position[0]][position[1] - 1] === true) {
-            counter++;
-        }
-        if (minefield[position[0] - 1][position[1] - 1] === true) {
-            counter++;
-        }
-        if (minefield[position[0] - 1][position[1]] === true) {
-            counter++;
-        }
-        return counter;
+        return checkRightCorner(position);
     }
 
 }
