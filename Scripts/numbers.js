@@ -4,6 +4,7 @@ import { rows } from "./main.js";
 import { minefield } from "./mines.js";
 
 function checkMiddle(position) {
+    let counter = 0;
     if (minefield[position[0]][position[1]] === true) {
         return -1;
     }
@@ -35,6 +36,7 @@ function checkMiddle(position) {
 }
 
 function checkTopLeft(position) {
+    let counter = 0;
     if (minefield[position[0]][position[1]] === true) {
         return -1;
     }
@@ -51,6 +53,7 @@ function checkTopLeft(position) {
 }
 
 function checkTopRight(position) {
+    let counter = 0;
     if (minefield[position[0]][position[1]] === true) {
         return -1;
     }
@@ -67,6 +70,7 @@ function checkTopRight(position) {
 }
 
 function checkBottomLeft(position) {
+    let counter = 0;
     if (minefield[position[0]][position[1]] === true) {
         return -1;
     }
@@ -83,6 +87,7 @@ function checkBottomLeft(position) {
 }
 
 function checkBottomRight(position) {
+    let counter = 0;
     if (minefield[position[0]][position[1]] === true) {
         return -1;
     }
@@ -92,13 +97,14 @@ function checkBottomRight(position) {
     if (minefield[position[0] - 1][position[1] - 1] === true) {
         counter++;
     }
-    if (minefield[position[0]][position[1] + 1] === true) {
+    if (minefield[position[0] - 1][position[1]] === true) {
         counter++;
     }
     return counter;
 }
 
 function checkTopCorner(position) {
+    let counter = 0;
     if (minefield[position[0]][position[1]] === true) {
         return -1;
     }
@@ -121,6 +127,7 @@ function checkTopCorner(position) {
 }
 
 function checkBottomCorner(position) {
+    let counter = 0;
     if (minefield[position[0]][position[1]] === true) {
         return -1;
     }
@@ -143,6 +150,7 @@ function checkBottomCorner(position) {
 }
 
 function checkLeftCorner(position) {
+    let counter = 0;
     if (minefield[position[0]][position[1]] === true) {
         return -1;
     }
@@ -165,6 +173,7 @@ function checkLeftCorner(position) {
 }
 
 function checkRightCorner(position) {
+    let counter = 0;
     if (minefield[position[0]][position[1]] === true) {
         return -1;
     }
@@ -187,7 +196,6 @@ function checkRightCorner(position) {
 }
 
 function checkMinesAround(position) {
-    let counter = 0;
 
     //middle
     if (position[0] !== 0 && position[0] !== (fieldSize - 1) && 

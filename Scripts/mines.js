@@ -25,7 +25,7 @@ function randomPosition() {
 }
 
 function alreadyTaken(position) {
-    if (minefield[position[0], position[1]] === true) {
+    if (minefield[position[0]][position[1]] === true) {
         return true;
     } else {
         return false;
@@ -35,18 +35,19 @@ function alreadyTaken(position) {
 function mineDensity() {
     return  Math.floor(Math.pow(fieldSize, 2) / 10);
 }
+export { mineDensity };
 
 function addMines() {
     minefield = createEmptyMinefield();
     let counter = mineDensity();
     for (let index = 0; index < counter; index++) {
         let position = randomPosition();
-        if (alreadyTaken(position)) {
+        /* Check if field is already taken */
+        if (alreadyTaken(position) === true) {
             counter++;
-            console.log('addMines: FIELD ALREADY TAKEN! ' + counter);
+            /*console.log('addMines: FIELD ALREADY TAKEN!');*/
         } else {
             minefield[position[0]][position[1]] = true;
-            console.log('addMines: Mine added successfully! ' + counter);
         }
     }
     

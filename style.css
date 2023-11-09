@@ -9,11 +9,57 @@
 
 game {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: auto;
     width: 720px;
     height: 720px;
+}
+
+#timer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    height: 5%;
+}
+
+#timer-clock {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    width: 133px;
+    height: 33px;
+    font-size: 2rem;
+}
+
+#minutes, #seconds {
+    font-size: 2rem;
+}
+
+#resetBtn {
+    width: 33px;
+    height: 33px;
+}
+
+#resetBtn input {
+    cursor: pointer;
+    position: absolute;
+    z-index: 1;
+    background: transparent;
+    border: none;
+    width: inherit;
+    height: inherit;
+}
+
+#resetBtn img {
+    position: absolute;
+    z-index: 0;
+    width: inherit;
+    height: inherit;
 }
 
 minefield {
